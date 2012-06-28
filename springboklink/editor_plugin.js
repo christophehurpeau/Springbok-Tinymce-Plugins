@@ -41,10 +41,10 @@
 								if(!data) alert(i18nc.Error);
 								else if(data.error){
 									alert(data.error);
-									if(p.search) formInternalLinks.find('#Input'+i.ucFirst()+'_search').val('').change();
+									if(p.search) formInternalLinks.find('#Input'+i.sbUcFirst()+'_search').val('').change();
 								}else{
 									formInternalLinks.find('input').not(t).val('').change();
-									if(p.search && data.value) formInternalLinks.find('#Input'+i.ucFirst()+'_search').val(data.value).change();
+									if(p.search && data.value) formInternalLinks.find('#Input'+i.sbUcFirst()+'_search').val(data.value).change();
 									form.find('#InputHref').val(data.url||'');
 								}
 							}
@@ -66,7 +66,7 @@
 						
 						form.find('#InputHref').prop('disabled',true);
 						$.each(params,function(i,p){
-							formInternalLinks.find('#Input'+type.ucFirst()+'_'+i).val(p).change();
+							formInternalLinks.find('#Input'+type.sbUcFirst()+'_'+i).val(p).change();
 						});
 						
 						linkToggle.click();
@@ -100,7 +100,7 @@
 						$.each(internalLinksParams,function(i,p){
 							var ifound=true;
 							params={};
-							$.each(p.params,function(i2,p2){ var input=$('#Input'+i.ucFirst()+'_'+i2),param=input.val(); if(param && param!=input.attr('title')) params[i2]=param; else{ ifound=false; return false } });
+							$.each(p.params,function(i2,p2){ var input=$('#Input'+i.sbUcFirst()+'_'+i2),param=input.val(); if(param && param!=input.attr('title')) params[i2]=param; else{ ifound=false; return false } });
 							if(ifound){
 								found=i;
 								return false;
