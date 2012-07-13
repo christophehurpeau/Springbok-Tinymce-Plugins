@@ -84,7 +84,7 @@
 						'data-params':undefined
 					};
 
-					if (! attrs.href || attrs.href == 'http://'  || attrs.href == 'https://' ){
+					if (! attrs.href/* || attrs.href == 'http://'  || attrs.href == 'https://' */){
 						if(e){
 							ed.execCommand("mceBeginUndoLevel");
 							b = ed.selection.getBookmark();
@@ -106,7 +106,6 @@
 								return false;
 							}
 						});
-						
 						if(found){
 							attrs['data-role']='internalLink';
 							attrs['data-type']=found;
