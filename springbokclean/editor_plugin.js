@@ -22,7 +22,10 @@
 					.replace(/style="([^"]+)"/gi,function(str,p1,offset,s){ return 'style="'+p1.replace(/\s*([;|:])\s*/g,'$1')+'"'; })
 				;
 			var i=4;
-			while(i-- > 0) content = content.replace(/<span[^>]*>\s*<\/span>/g,'');
+			while(i-- > 0){
+				content = content.replace(/<span[^>]*>\s*<\/span>/g,'');
+				content = content.replace(/<p[^>]*>\s*<\/p>\s*<p>/g,'<p class="mt20">');
+			}
 			i=4;
 			while(i-- > 0){
 				content=content.replace(/<span([^>]*)>(\s*)<span([^>]*)>(.*)<\/span>(\s*)<\/span>/,function(str,p1,p2,p3,p4,p5,offset,s){
