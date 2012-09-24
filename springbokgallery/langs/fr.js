@@ -1,3 +1,3 @@
 tinyMCE.addI18n('fr.springbokgallery',{
-	"addImage":"Insérer une image"
+	"openImageGallery":"Ouvrir la gallerie d'image"
 });

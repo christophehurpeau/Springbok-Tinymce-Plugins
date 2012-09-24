@@ -29,9 +29,9 @@
 
 			// Register example button
 			ed.addButton('springbokAddImage',{
-				title : 'springbokgallery.addImage',
+				title : 'springbokgallery.openImageGallery',
 				cmd : 'springbokGallery',
-				image : url + '/img/image_add.gif'
+				image : url + '/img/images.png'
 			});
 
 			// Add a node change handler, selects the button in the UI when a image is selected
