@@ -33,7 +33,7 @@
 					var attributes={},attrsMatches,style,m;
 					$.each([p1,p3],function(i,attrs){
 						attrsMatches=attrs.match(/([a-zA-Z]+)="([^"]+)"/g);
-						if(attrsMatches) attrsMatches.each(function(k,attr){
+						if(attrsMatches) $.each(attrsMatches,function(k,attr){
 							m=/^([a-zA-Z]+)="([^"]+)"$/.exec(attr);
 							if(m[1]==='style'){
 								style=m[2].trim().rtrim(';');
