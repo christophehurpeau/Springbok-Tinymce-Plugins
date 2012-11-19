@@ -17,6 +17,7 @@
 			ed.addCommand('springbokLink', function() {
 				if ( disabled )
 					return;
+				
 				var attrs,linkToggle,internalLinksParams=ed.getParam('internalLinks'),linksDiv=false,formInternalLinks,
 					form=(new S.HForm(false,{'class':'small-label'}))
 						.appendInputUrl('href','URL',{style:'width:330px'})
@@ -139,7 +140,7 @@
 			ed.addShortcut('alt+shift+a', ed.getLang('advanced.link_desc'), 'springbokLink');
 
 			ed.onNodeChange.add(function(ed, cm, n, co) {
-				disabled = co && n.nodeName != 'A';
+				disabled = co && !ed.dom.getParent(n,'A');//(n.nodeName != 'A');
 			});
 		},
 		/**
