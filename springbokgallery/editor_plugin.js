@@ -21,7 +21,7 @@
 			// Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceExample');
 			ed.addCommand('springbokGallery', function() {
 				gallery.setOnSelectImage(function(idImage,image){
-					ed.execCommand('mceInsertContent', false,'<img src="'+basedir+'web/files/cms_images/'+idImage+'.jpg"'/* width="'+image.width+'" height="'+image.height+'"*/+'/>');
+					ed.execCommand('mceInsertContent', false,'<img src="'+basedir+'web/files/library/'+idImage+'.jpg"'/* width="'+image.width+'" height="'+image.height+'"*/+'/>');
 					gallery.close();
 				});
 				gallery.load(true);
