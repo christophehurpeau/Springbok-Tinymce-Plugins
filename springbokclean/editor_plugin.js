@@ -15,7 +15,7 @@
 		},
 		
 		cleanHTML:function(content){
-			if(content.sHas("_____")||content.sHas("-----")) alert("Utilisez des <hr> !")
+			if(content.contains("_____")||content.contains("-----")) alert("Utilisez des <hr> !");
 			// remove invalid parent paragraphs when pasting HTML and/or switching to the HTML editor and back
 			//console.log(content);
 			content = content.replace(/<\/p>\s*/g,"</p>\n")
