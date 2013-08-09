@@ -40,9 +40,20 @@
 							else{
 								data=S.syncJson(p.checkParam,{val:val});
 								if(!data) alert(i18nc.Error);
-								else if(data.error){
+								else if(data.replace){
+									t.val(data.replace);
+									formInternalLinks.find('input').not(t).val('').change();
+									if(p.search && data.value) formInternalLinks.find('#Input'+UString.ucFirst(i)+'_search').val(data.value).change();
+									form.find('#InputHref').val(data.url||'');
+								}else if(data.error){
 									alert(data.error);
-									if(p.search) formInternalLinks.find('#Input'+UString.ucFirst(i)+'_search').val('').change();
+									if(p.search){
+										var inputSearch=formInternalLinks.find('#Input'+UString.ucFirst(i)+'_search');
+										if(inputSearch && inputSearch.defaultInput('clean').val()){
+											t.val('');
+											inputSearch.change();
+										}
+									}
 								}else{
 									formInternalLinks.find('input').not(t).val('').change();
 									if(p.search && data.value) formInternalLinks.find('#Input'+UString.ucFirst(i)+'_search').val(data.value).change();
